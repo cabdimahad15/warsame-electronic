@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="so">
+<head>
+  <meta charset="UTF-8">
+  <title>Warsame Electronics</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Warsame Electronics</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">Nagu Saabsan</a></li>
+        <li><a href="services.html">Adeegyadeena</a></li>
+        <li><a href="gallery.html">Sawirro</a></li>
+        <li><a href="contact.html">La Xiriir</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <h2>Ku soo dhawoow Warsame Electronics!</h2>
+    <p>Waxaan nahay shirkad bixisa adeegyo tayo sare leh oo loogu talagalay bulshada Soomaaliyeed.</p>
+  </main>
+  <footer>
+    <p>&copy; 2025 Warsame Electronics. Xuquuqdu way dhowran tahay.</p>
+  </footer>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="so">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Warsame Electronics</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <h1>Warsame Electronics</h1>
+    <nav>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Nagu Saabsan</a></li>
+        <li><a href="#">Adeegyadeena</a></li>
+        <li><a href="#">Sawirro</a></li>
+        <li><a href="#">La Xiriir</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="welcome">
+      <h2>Ku soo dhawoow Warsame Electronics!</h2>
+      <p>Waxaan nahay shirkad bixisa adeegyo tayo sare leh oo loogu talagalay bulshada Soomaaliyeed.</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 Warsame Electronics. Xuquuqdu way dhowran tahay.</p>
+  </footer>
+</body>
+</html>
+<section id="products" class="section">
+    <h2>Qalabkeena</h2>
+    <div class="product-grid">
+      <div class="product-card">
+        <img src="images/tv.jpg" alt="TV Smart" />
+        <h3>TV Smart 42"</h3>
+        <p>Qiimo: $250</p>
+      </div>
+      <div class="product-card">
+        <img src="images/fridge.jpg" alt="Fridge" />
+        <h3>Fridge 300L</h3>
+        <p>Qiimo: $310</p>
+      </div>
+      <div class="product-card">
+        <img src="images/washing.jpg" alt="Makiinadda Dhaqida" />
+        <h3>Washing Machine</h3>
+        <p>Qiimo: $220</p>
+      </div>
+      <div class="product-card">
+        <img src="images/laptop.jpg" alt="Laptop Dell" />
+        <h3>Laptop Dell i5</h3>
+        <p>Qiimo: $430</p>
+      </div>
+      <div class="product-card">
+        <img src="images/solar.jpg" alt="Solar System" />
+        <h3>Solar System Set</h3>
+        <p>Qiimo: $180</p>
+      </div>
+      <div class="product-card">
+        <img src="images/speaker.jpg" alt="Bluetooth Speaker" />
+        <h3>Bluetooth Speaker</h3>
+        <p>Qiimo: $40</p>
+      </div>
+    </div>
+  </section>
+  <section id="products" class="section">
+    <h2>Qalabkeena</h2>
+    <div class="product-grid">
+  
+      <div class="product-card">
+        <img src="images/tv.jpg" alt="TV Smart" />
+        <h3>TV Smart 42"</h3>
+        <p>Qiimo: $250</p>
+        <button onclick="addToCart('TV Smart 42\', 250)">Ku dar Gaadhiga</button>
+      </div>
+  
+      <div class="product-card">
+        <img src="images/fridge.jpg" alt="Fridge" />
+        <h3>Fridge 300L</h3>
+        <p>Qiimo: $310</p>
+        <button onclick="addToCart('Fridge 300L', 310)">Ku dar Gaadhiga</button>
+      </div>
+  
+      <div class="product-card">
+        <img src="images/laptop.jpg" alt="Laptop Dell" />
+        <h3>Laptop Dell i5</h3>
+        <p>Qiimo: $430</p>
+        <button onclick="addToCart('Laptop Dell i5', 430)">Ku dar Gaadhiga</button>
+      </div>
+  
+      <!-- Waxaad ku sii dari kartaa qalabyo kale sidaan -->
+      
+    </div>
+  
+    <!-- Cart Info -->
+    <div class="cart-box">
+      <h3>Waxyaabaha Gaadhiga ku jira:</h3>
+      <ul id="cart-list"></ul>
+      <p><strong>Wadarta:</strong> $<span id="total">0</span></p>
+    </div>
+  </section>
+  <script>
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+  
+    function addToCart(product, price) {
+      cart.push({ product, price });
+      localStorage.setItem('cart', JSON.stringify(cart));
+      showCart();
+    }
+  
+    function showCart() {
+      const list = document.getElementById('cart-list');
+      const total = document.getElementById('total');
+      list.innerHTML = '';
+      let sum = 0;
+  
+      cart.forEach(item => {
+        const li = document.createElement('li');
+        li.textContent = `${item.product} - $${item.price}`;
+        list.appendChild(li);
+        sum += item.price;
+      });
+  
+      total.textContent = sum;
+    }
+  
+    // Marka bogga la furo, soo celi waxyaabaha ku jira cart-ka
+    window.onload = showCart;
+  </script>
+      images/
+      <!DOCTYPE html>
+      <html lang="so">
+      <head>
+        <!-- Meta, Title, Link to CSS -->
+      </head>
+      <body>
+      
+        <!-- Header (navigation menu) -->
+      
+        <!-- Hero section (ku soo dhawoow) -->
+      
+        <!-- Qalabkeena (product cards) -->
+      
+        <!-- Footer -->
+      
+        <!-- JavaScript (scripts) -->
+      
+      </body>
+      </html>
+      
